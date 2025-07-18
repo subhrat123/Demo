@@ -3,10 +3,12 @@ const { v4: uuidv4 } = require('uuid');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // === Optional: MongoDB Schema ===
 const UserSchema = new mongoose.Schema({
